@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 75.7 50.3">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-2.55" y1="-9.19" x2="63.7" y2="47.12" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8ff00"/>
+      <stop offset="1" stop-color="#00f9ea"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_9" data-name="Layer 9">
+    <g>
+      <rect class="cls-1" width="75.7" height="50.3"/>
+      <g>
+        <path class="cls-2" d="M23.92,11.58l6.97-4.02h13.93l6.97,4.02v2.68l-6.97-4.02h-13.93l-6.97,4.02v-2.68ZM51.78,14.26v18.78l-13.93,8.05-13.93-8.05V14.26l-2.32,1.34v18.78l16.25,9.39,16.25-9.39V15.6l-2.32-1.34Z"/>
+        <polygon points="33.21 16.94 30.88 15.6 30.88 23.65 37.85 27.67 44.81 23.65 44.81 15.6 42.49 16.94 42.49 22.31 37.85 24.99 33.21 22.31 33.21 16.94"/>
+        <polygon points="42.49 30.36 42.49 27.67 35.53 31.7 35.53 34.38 42.49 30.36"/>
+      </g>
+    </g>
+  </g>
+</svg>

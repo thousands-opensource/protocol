@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "declaration": true,
+        "declarationMap": true,
+        "skipLibCheck": true,
+        "target": "es6",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "rootDir": ".",
+        "baseUrl": ".",
+        "paths": {
+            //alias pathing for absolute paths
+            "@src/*": ["src/*"],
+            "*": ["node_modules/*"]
+        }
+    },
+    "include": ["**/*"]
+}

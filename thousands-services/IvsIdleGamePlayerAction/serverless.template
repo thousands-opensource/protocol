@@ -1,0 +1,61 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+  "Transform" : "AWS::Serverless-2016-10-31",
+  "Description" : "Starting template for an AWS Serverless Application.",
+  "Parameters" : {
+  },
+  "Resources": {
+    "IvsIdleGamePlayerAction": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "IvsIdleGamePlayerAction::IvsIdleGamePlayerAction.Function::FunctionHandler",
+        "Runtime": "dotnet8",
+        "CodeUri": "",
+        "Description": "Handle idle game player actions",
+        "MemorySize": 256,
+        "Timeout": 10,
+        "Role": null,
+        "Policies": [ "AWSLambdaFullAccess" ]
+      }
+    },
+    "IvsIdleGameLeave": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "IvsIdleGamePlayerAction::IvsIdleGamePlayerAction.Function::PresenceLeaveHandler",
+        "Runtime": "dotnet8",
+        "CodeUri": "",
+        "Description": "Handle PubNub presence leave",
+        "MemorySize": 256,
+        "Timeout": 10,
+        "Role": null,
+        "Policies": [ "AWSLambdaFullAccess" ]
+      }
+    },
+    "IvsIdleGameGameEvent": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "IvsIdleGamePlayerAction::IvsIdleGamePlayerAction.Function::GameEventHandler",
+        "Runtime": "dotnet8",
+        "CodeUri": "",
+        "Description": "Handle events emitted by the game",
+        "MemorySize": 256,
+        "Timeout": 10,
+        "Role": null,
+        "Policies": [ "AWSLambdaFullAccess" ]
+      }
+    },
+    "IvsIdleGameCreatorEvent": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "IvsIdleGamePlayerAction::IvsIdleGamePlayerAction.Function::CreatorEventHandler",
+        "Runtime": "dotnet8",
+        "CodeUri": "",
+        "Description": "Handle events from the creator",
+        "MemorySize": 256,
+        "Timeout": 10,
+        "Role": null,
+        "Policies": [ "AWSLambdaFullAccess" ]
+      }
+    }
+  }
+}

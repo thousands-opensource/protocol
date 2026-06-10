@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.main {
+    width: 100%;
+    height: 100vh;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    content: "";
+    align-items: center;
+    color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 50%);
+}
+
+.overlayDark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 80%);
+}
+
+.wildcardFont {
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Gilroy, sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.icon-spin {
+    -webkit-animation: icon-spin 2s infinite linear;
+    animation: icon-spin 2s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes icon-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../public/fonts/Poppins-Regular.woff') format('woff');
+    font-weight: 400; 
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../public/fonts/Poppins-Medium.woff') format('woff');
+    font-weight: 500; 
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../public/fonts/Poppins-Bold.woff') format('woff');
+    font-weight: 700; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../public/fonts/Poppins-Light.woff') format('woff');
+    font-weight: 300; 
+    font-style: normal;
+}

@@ -1,0 +1,29 @@
+{
+    "name": "@repo/interfaces",
+    "version": "1.0.0",
+    "main": "dist/src/index.js",
+    "types": "dist/src/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./dist/src/index.js",
+            "import": "./dist/src/index.js",
+            "types": "./dist/src/index.d.ts"
+        }
+    },
+    "scripts": {
+        "prebuild": "npx eslint",
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "@types/module-alias": "^2.0.4",
+        "@typescript-eslint/eslint-plugin": "^5.50.0",
+        "@typescript-eslint/parser": "^5.50.0",
+        "typescript": "^5.1.6"
+    },
+    "dependencies": {
+        "alchemy-sdk": "^3.3.1",
+        "eslint": "^8.33.0",
+        "module-alias": "^2.2.3",
+        "mongoose": "^7.5.0"
+    }
+}

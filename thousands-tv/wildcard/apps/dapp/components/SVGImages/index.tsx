@@ -1,0 +1,454 @@
+import { Box, BoxProps, Spinner } from "@chakra-ui/react";
+import { Dispatch, SetStateAction, useEffect } from "react";
+import { FaCircle } from "react-icons/fa";
+
+// SVG Component for Hexagonal Profile Picture
+interface SVGImageHexagonalPFPProps {
+    setIsVideoLoaded: Dispatch<SetStateAction<boolean>>;
+}
+
+export const SVGImageHexagonalPFP = ({
+    setIsVideoLoaded,
+}: SVGImageHexagonalPFPProps) => {
+    return (
+        <Box
+            as="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 779.47 713.6"
+            position={{ lg: "absolute" }}
+            top={{ lg: "50%" }}
+            left={{ lg: "50%" }}
+            transform={{ lg: "translate(-50%, -50%)" }}
+            sx={{
+                height: "100%",
+                width: "100%",
+            }}
+        >
+            <defs>
+                <style>
+                    {`.video-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+           
+          }
+
+          .video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }`}
+                </style>
+            </defs>
+
+            <defs>
+                <style>
+                    {`
+          .cls-1 {
+            fill: url(#linear-gradient);
+          }
+
+          .cls-2 {
+            fill: url(#linear-gradient-3);
+          }
+
+          .cls-3 {
+            fill: url(#linear-gradient-2);
+          }
+
+          .cls-4 {
+            isolation: isolate;
+          }
+
+          .cls-5 {
+            mix-blend-mode: multiply;
+            opacity: .74;
+          }
+          `}
+                </style>
+                <linearGradient
+                    id="linear-gradient"
+                    x1="723.9"
+                    y1="797.58"
+                    x2="164.23"
+                    y2="59.34"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0" stopColor="#fff" />
+                    <stop offset="1" stopColor="#babcbe" />
+                </linearGradient>
+                <linearGradient
+                    id="linear-gradient-2"
+                    x1="390.11"
+                    y1="357.17"
+                    x2="-82.4"
+                    y2="-115.34"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0" stopColor="#babcbe" />
+                    <stop offset=".99" stopColor="#6d6e71" />
+                </linearGradient>
+                <linearGradient
+                    id="linear-gradient-3"
+                    x1="93.62"
+                    y1="221.25"
+                    x2="542.55"
+                    y2="426.76"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0" stopColor="#fff" />
+                    <stop offset="1" stopColor="#e4e5e6" />
+                </linearGradient>
+            </defs>
+
+            {/* Convert to above */}
+            {/* Use https://betravis.github.io/shape-tools/path-to-polygon/ to generate the hexagonal shape mapped to the polygon points */}
+            <defs>
+                <clipPath id="hexagon-clip-path">
+                    <polygon points="509.2 678.3, 270.3 678.3, 171.0 621.0, 51.6 414.1, 51.6 299.5, 171.0 92.6, 270.3 35.3, 509.2 35.3, 608.5 92.6, 727.9 299.5, 727.9 414.1, 608.5 621.0, 509.2 678.3" />
+                </clipPath>
+                <linearGradient
+                    id="silver-metallic-gradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                >
+                    <stop
+                        offset="0%"
+                        style={{
+                            stopColor: "#e0e0e0",
+                            stopOpacity: 1,
+                        }}
+                    />
+                    <stop
+                        offset="50%"
+                        style={{
+                            stopColor: "#b3b3b3",
+                            stopOpacity: 1,
+                        }}
+                    />
+                    <stop
+                        offset="100%"
+                        style={{
+                            stopColor: "#e0e0e0",
+                            stopOpacity: 1,
+                        }}
+                    />
+                </linearGradient>
+            </defs>
+
+            {/* Video Clip path around the hexagonal shape */}
+            <foreignObject
+                x="0"
+                y="0"
+                width="100%"
+                height="100%"
+                clipPath="url(#hexagon-clip-path)"
+            >
+                <div className="video-container">
+                    <video
+                        src="/assets/crowd-group.mov" // Path to your video file
+                        autoPlay
+                        loop
+                        muted
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "fill",
+                        }}
+                        onLoadedData={() => {
+                            setIsVideoLoaded(true);
+                        }}
+                    />
+                </div>
+            </foreignObject>
+
+            {/* Hexagonal Border Frame */}
+            <g className="cls-4">
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <g>
+                            <g className="cls-5">
+                                <path
+                                    className="cls-1"
+                                    d="m509.16,678.3h-238.84c-40.83,0-78.88-21.97-99.29-57.33l-119.42-206.84c-20.41-35.36-20.41-79.29,0-114.65l119.42-206.84c20.42-35.36,58.46-57.33,99.29-57.33h238.84c40.83,0,78.88,21.97,99.29,57.33l119.42,206.84c20.41,35.36,20.41,79.29,0,114.65l-119.42,206.84c-20.42,35.36-58.46,57.33-99.29,57.33ZM270.32,68.34c-29.07,0-56.15,15.64-70.68,40.81l-119.42,206.84c-14.53,25.17-14.53,56.45,0,81.62l119.42,206.84c14.53,25.17,41.62,40.81,70.68,40.81h238.84c29.07,0,56.15-15.64,70.69-40.81l119.42-206.84c14.53-25.17,14.53-56.45,0-81.62l-119.42-206.84c-14.53-25.17-41.62-40.81-70.68-40.81h-238.84Z"
+                                />
+                            </g>
+                            <path
+                                className="cls-3"
+                                d="m512.65,53.9c32.05,0,61.92,17.24,77.95,45l122.91,212.89c16.03,27.76,16.03,62.25,0,90.01l-122.91,212.89c-16.03,27.76-45.9,45-77.95,45h-245.83c-32.05,0-61.92-17.24-77.95-45l-122.91-212.89c-16.03-27.76-16.03-62.25,0-90.01l122.91-212.89c16.03-27.76,45.89-45,77.95-45h245.83m0-11h-245.83c-35.97,0-69.49,19.35-87.47,50.5l-122.91,212.89c-17.98,31.15-17.98,69.85,0,101.01l122.91,212.89c17.99,31.15,51.5,50.5,87.47,50.5h245.83c35.97,0,69.49-19.35,87.47-50.5l122.91-212.89c17.99-31.15,17.99-69.85,0-101.01l-122.91-212.89c-17.99-31.15-51.5-50.5-87.47-50.5h0Z"
+                            />
+                            <path
+                                className="cls-2"
+                                d="m512.65,42.9c35.97,0,69.49,19.35,87.47,50.5l122.91,212.89c17.99,31.15,17.99,69.85,0,101.01l-122.91,212.89c-17.99,31.15-51.5,50.5-87.47,50.5h-245.83c-35.97,0-69.49-19.35-87.47-50.5l-122.91-212.89c-17.99-31.15-17.99-69.86,0-101.01l122.91-212.89c17.99-31.15,51.5-50.5,87.47-50.5h245.83m0-42.9h-245.83c-51.41,0-98.92,27.43-124.63,71.95L19.28,284.85c-25.71,44.53-25.71,99.38,0,143.91l122.91,212.89c25.71,44.53,73.22,71.95,124.63,71.95h245.83c51.41,0,98.92-27.43,124.63-71.95l122.91-212.89c25.71-44.53,25.71-99.38,0-143.91l-122.91-212.89C611.57,27.43,564.06,0,512.65,0h0Z"
+                            />
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </Box>
+    );
+};
+
+interface HexagonSVGBlurProps {
+    primaryColor: string;
+}
+
+// SVG Blur Component for Hexagonal Profile Picture
+export const HexagonSVGBlur = ({ primaryColor }: HexagonSVGBlurProps) => {
+    return <FaCircle color={primaryColor} size={400} />;
+};
+
+interface HexagonSVGColorBorderProps extends BoxProps {
+    primaryColor: string;
+}
+
+/**
+ * Color Background for Hexagonal Profile Picture
+ * @dev requires a separate svg layer from main avatar and preview avatar
+ */
+export const HexagonSVGColorBorder = ({
+    primaryColor,
+    id,
+    ...rest
+}: HexagonSVGColorBorderProps) => {
+    return (
+        <Box as="svg" {...rest}>
+            <defs>
+                <style>
+                    {`.cls-1-${id} {
+            fill: url(#Hex_Bg);
+          }`}
+                </style>
+                <linearGradient id="Hex_Bg">
+                    <stop offset="0" stopColor={primaryColor} />
+                </linearGradient>
+            </defs>
+        </Box>
+    );
+};
+
+/**
+ * Color Background for Hexagonal Profile Picture (Preview Mode)
+ */
+export const HexagonSVGColorBorderPreview = ({
+    primaryColor,
+    id,
+}: HexagonSVGColorBorderProps) => {
+    return (
+        <svg id="borderColorPreview">
+            <defs>
+                <style>
+                    {`.cls-1-${id} {
+            fill: url(#Hex_Bg_Preview);
+          }`}
+                </style>
+                <linearGradient id="Hex_Bg_Preview">
+                    <stop offset="0" stopColor={primaryColor} />
+                </linearGradient>
+            </defs>
+        </svg>
+    );
+};
+
+interface HexagonSVGAvatarPFPProps extends BoxProps {
+    srcUrl: string;
+    scaleFactor?: number;
+    setImageLoaded: Dispatch<SetStateAction<boolean>>;
+    imageLoaded: boolean;
+}
+
+// SVG Component for Hexagonal Profile Picture (with PFP Image)
+export const HexagonSVGAvatarPFP = ({
+    srcUrl,
+    scaleFactor = 1,
+    setImageLoaded,
+    imageLoaded,
+    id,
+    ...rest
+}: HexagonSVGAvatarPFPProps) => {
+    const handleImageLoad = () => {
+        setImageLoaded(true);
+    };
+    // Generate the Hexagonal SVG Image once the image is loaded
+    useEffect(() => {
+        const imgElement = new Image();
+        imgElement.src = srcUrl;
+        imgElement.addEventListener("load", handleImageLoad);
+
+        return () => {
+            imgElement.removeEventListener("load", handleImageLoad);
+        };
+    }, [srcUrl]);
+
+    const spinnerSize = !!id ? "sm" : "xl";
+    if (!imageLoaded) {
+        return (
+            <>
+                <Spinner size={spinnerSize} color={"#FFFFFF"} />
+            </>
+        );
+    }
+
+    return (
+        <Box
+            as="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 779.47 713.6"
+            {...rest}
+        >
+            <defs>
+                <style>
+                    {`
+          .cls-1-${id} {
+            fill: url(#linear-gradient-${id});
+          }
+
+          .cls-2-${id} {
+            fill: url(#linear-gradient-3-${id});
+          }
+
+          .cls-3-${id} {
+            fill: url(#linear-gradient-2-${id});
+          }
+
+          .cls-4-${id} {
+            isolation: isolate;
+          }
+
+          .cls-5-${id} {
+            mix-blend-mode: multiply;
+            opacity: .74;
+          }
+          `}
+                </style>
+                <linearGradient
+                    id={`linear-gradient-${id}`}
+                    x1="723.9"
+                    y1="797.58"
+                    x2="164.23"
+                    y2="59.34"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0" stopColor="#fff" />
+                    <stop offset="1" stopColor="#babcbe" />
+                </linearGradient>
+                <linearGradient
+                    id={`linear-gradient-2-${id}`}
+                    x1="390.11"
+                    y1="357.17"
+                    x2="-82.4"
+                    y2="-115.34"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0" stopColor="#babcbe" />
+                    <stop offset=".99" stopColor="#6d6e71" />
+                </linearGradient>
+                <linearGradient
+                    id={`linear-gradient-3-${id}`}
+                    x1="93.62"
+                    y1="221.25"
+                    x2="542.55"
+                    y2="426.76"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0" stopColor="#fff" />
+                    <stop offset="1" stopColor="#e4e5e6" />
+                </linearGradient>
+            </defs>
+
+            {/* Convert to above */}
+            {/* Use https://betravis.github.io/shape-tools/path-to-polygon/ to generate the hexagonal shape mapped to the polygon points */}
+            <defs>
+                <clipPath id={`hexagon-clip-path-${id}`}>
+                    <polygon points="509.2 678.3, 270.3 678.3, 171.0 621.0, 51.6 414.1, 51.6 299.5, 171.0 92.6, 270.3 35.3, 509.2 35.3, 608.5 92.6, 727.9 299.5, 727.9 414.1, 608.5 621.0, 509.2 678.3" />
+                </clipPath>
+                <linearGradient
+                    id="silver-metallic-gradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                >
+                    <stop
+                        offset="0%"
+                        style={{
+                            stopColor: "#e0e0e0",
+                            stopOpacity: 1,
+                        }}
+                    />
+                    <stop
+                        offset="50%"
+                        style={{
+                            stopColor: "#b3b3b3",
+                            stopOpacity: 1,
+                        }}
+                    />
+                    <stop
+                        offset="100%"
+                        style={{
+                            stopColor: "#e0e0e0",
+                            stopOpacity: 1,
+                        }}
+                    />
+                </linearGradient>
+            </defs>
+
+            {/* PFP Image to be clipped into the hexagonal border */}
+            <foreignObject
+                x="0"
+                y="0"
+                width="100%"
+                height="100%"
+                clipPath={`url(#hexagon-clip-path-${id})`}
+            >
+                <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    height={"auto"}
+                    width="auto"
+                    // transform={`scale(${scaleFactor})`} // Apply the scaling transformation
+                >
+                    <img
+                        src={srcUrl} // Path to your video file
+                        style={{
+                            width: "100%", // Make the image cover the entire container
+                            height: "100%", // Make the image cover the entire container
+                            objectFit: "cover", // Scale and crop the image to cover the container
+                        }}
+                        alt="avatar-pfp"
+                    />
+                </Box>
+            </foreignObject>
+
+            {/* Hexagonal Border Frame */}
+            <g className={`cls-4-${id}`}>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <g>
+                            <g className={`cls-5-${id}`}>
+                                <path
+                                    className={`cls-1-${id}`}
+                                    d="m509.16,678.3h-238.84c-40.83,0-78.88-21.97-99.29-57.33l-119.42-206.84c-20.41-35.36-20.41-79.29,0-114.65l119.42-206.84c20.42-35.36,58.46-57.33,99.29-57.33h238.84c40.83,0,78.88,21.97,99.29,57.33l119.42,206.84c20.41,35.36,20.41,79.29,0,114.65l-119.42,206.84c-20.42,35.36-58.46,57.33-99.29,57.33ZM270.32,68.34c-29.07,0-56.15,15.64-70.68,40.81l-119.42,206.84c-14.53,25.17-14.53,56.45,0,81.62l119.42,206.84c14.53,25.17,41.62,40.81,70.68,40.81h238.84c29.07,0,56.15-15.64,70.69-40.81l119.42-206.84c14.53-25.17,14.53-56.45,0-81.62l-119.42-206.84c-14.53-25.17-41.62-40.81-70.68-40.81h-238.84Z"
+                                />
+                            </g>
+                            <path
+                                className={`cls-3-${id}`}
+                                d="m512.65,53.9c32.05,0,61.92,17.24,77.95,45l122.91,212.89c16.03,27.76,16.03,62.25,0,90.01l-122.91,212.89c-16.03,27.76-45.9,45-77.95,45h-245.83c-32.05,0-61.92-17.24-77.95-45l-122.91-212.89c-16.03-27.76-16.03-62.25,0-90.01l122.91-212.89c16.03-27.76,45.89-45,77.95-45h245.83m0-11h-245.83c-35.97,0-69.49,19.35-87.47,50.5l-122.91,212.89c-17.98,31.15-17.98,69.85,0,101.01l122.91,212.89c17.99,31.15,51.5,50.5,87.47,50.5h245.83c35.97,0,69.49-19.35,87.47-50.5l122.91-212.89c17.99-31.15,17.99-69.85,0-101.01l-122.91-212.89c-17.99-31.15-51.5-50.5-87.47-50.5h0Z"
+                            />
+                            <path
+                                className={`cls-2-${id}`}
+                                d="m512.65,42.9c35.97,0,69.49,19.35,87.47,50.5l122.91,212.89c17.99,31.15,17.99,69.85,0,101.01l-122.91,212.89c-17.99,31.15-51.5,50.5-87.47,50.5h-245.83c-35.97,0-69.49-19.35-87.47-50.5l-122.91-212.89c-17.99-31.15-17.99-69.86,0-101.01l122.91-212.89c17.99-31.15,51.5-50.5,87.47-50.5h245.83m0-42.9h-245.83c-51.41,0-98.92,27.43-124.63,71.95L19.28,284.85c-25.71,44.53-25.71,99.38,0,143.91l122.91,212.89c25.71,44.53,73.22,71.95,124.63,71.95h245.83c51.41,0,98.92-27.43,124.63-71.95l122.91-212.89c25.71-44.53,25.71-99.38,0-143.91l-122.91-212.89C611.57,27.43,564.06,0,512.65,0h0Z"
+                            />
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </Box>
+    );
+};

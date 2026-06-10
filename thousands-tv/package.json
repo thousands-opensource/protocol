@@ -1,0 +1,21 @@
+{
+    "name": "wildcard-monorepo",
+    "version": "1.0.0",
+    "workspaces": [
+        "wildcard/apps/*",
+        "wildcard/packages/*"
+    ],
+    "packageManager": "npm@10.5.2",
+    "scripts": {
+        "heroku-postbuild": "turbo build --filter=nodejs-bot"
+    },
+    "dependencies": {
+        "@plasmicapp/loader-nextjs": "^1.0.437",
+        "@tanstack/react-table": "^8.20.5",
+        "@types/pubnub": "^7.4.2",
+        "turbo": "^2.0.4"
+    },
+    "devDependencies": {
+        "@types/dom-screen-wake-lock": "^1.0.3"
+    }
+}

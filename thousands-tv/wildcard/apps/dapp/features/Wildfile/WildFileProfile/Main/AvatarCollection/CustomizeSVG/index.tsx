@@ -1,0 +1,87 @@
+import { ColorObject } from "@/types";
+import { Box } from "@chakra-ui/react";
+
+interface CustomizeSVGProps {
+    avatarThemeColor: ColorObject;
+}
+
+const CustomizeSVG = ({ avatarThemeColor }: CustomizeSVGProps) => {
+    return (
+        <Box
+            as="svg"
+            version="1.1"
+            id="Layer_2_00000127743170870293809730000004260916833077831813_"
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            viewBox="0 0 193.1 48.9"
+            width="160px"
+            height="auto"
+        >
+            <defs>
+                <style type="text/css">
+                    {`
+                        .customize-trapezoid-background {
+                            fill:#393C40;
+                        }
+                    
+                        .customize-header-title {
+                            fill: ${avatarThemeColor.hexValue};
+                        }
+                    `}
+                </style>
+            </defs>
+            <g id="Layer_10">
+                <g>
+                    <polygon
+                        className="customize-trapezoid-background"
+                        points="147.7,0 0,0 0,48.9 134.6,48.9"
+                    />
+                </g>
+            </g>
+            <g>
+                <path
+                    className="customize-header-title"
+                    d="M22.4,21.2v-5.3h-2.2V33h2.2v-5.3h4.2v6.2c0,2.1-1.1,3.6-2.9,3.6h-4.8c-1.8,0-2.9-1.5-2.9-3.6v-19
+		c0-2,1.1-3.6,2.9-3.6h4.8c1.8,0,2.9,1.5,2.9,3.6v6.2H22.4z"
+                />
+                <path
+                    className="customize-header-title"
+                    d="M33.5,32.4h2v-21h4.5v22.5c0,2.4-1.4,3.6-3,3.6h-5c-1.6,0-2.9-1.2-2.9-3.6V11.4h4.5V32.4z"
+                />
+                <path
+                    className="customize-header-title"
+                    d="M46,33h1.6v-3.4c-1.6-2.6-3.2-5.2-4.8-7.8c-0.6-1.1-1.1-2.4-1.1-3.8v-3.1c0-2.4,1.3-3.6,3-3.6H49
+		c1.6,0,2.9,1.2,2.9,3.6v3.8h-4.3v-2.9H46v2.9c1.6,2.6,3.2,5.2,4.8,7.8c0.7,1.1,1.1,2.4,1.1,3.8v3.6c0,2.4-1.3,3.6-2.9,3.6h-4.3
+		c-1.6,0-3-1.2-3-3.6v-4.8H46V33z"
+                />
+                <path
+                    className="customize-header-title"
+                    d="M56,15.7h-2.9v-4.3h10.4v4.3h-3.1v21.8H56V15.7z"
+                />
+                <path
+                    className="customize-header-title"
+                    d="M64.8,14.9c0-2.4,1.5-3.6,3.1-3.6h5c1.6,0,3.1,1.2,3.1,3.6v19c0,2.4-1.5,3.6-3.1,3.6h-5
+		c-1.6,0-3.1-1.2-3.1-3.6V14.9z M69.3,15.9V33h2.3V15.9H69.3z"
+                />
+                <path
+                    className="customize-header-title"
+                    d="M91.5,11.4v26.1h-4.1V27.4l-1.7,10.1h-1.9L82,27.4v10.1h-4.1V11.4h4.9l1.9,11.2l1.9-11.2H91.5z"
+                />
+                <path
+                    className="customize-header-title"
+                    d="M93.9,11.4h4.6v26.1h-4.6V11.4z"
+                />
+                <path
+                    className="customize-header-title"
+                    d="M100.5,32.8c2.2-6.4,4-11.3,5.8-16.7h-5.6v-4.7h10.1v4.7c-1.8,5.5-3.9,11.3-5.8,16.7h6v4.7h-10.5V32.8z"
+                />
+                <path
+                    className="customize-header-title"
+                    d="M112.6,11.4h8.8v4.4h-4.1V22h2.9v4.1h-2.9v7h4.1v4.4h-8.8V11.4z"
+                />
+            </g>
+        </Box>
+    );
+};
+export default CustomizeSVG;

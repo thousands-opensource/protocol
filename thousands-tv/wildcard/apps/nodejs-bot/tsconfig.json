@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "Node16",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "target": "es6",
+        "noImplicitAny": true,
+        "moduleResolution": "Node16",
+        "sourceMap": true,
+        "outDir": "dist",
+        "rootDir": ".",
+        "baseUrl": ".",
+        "paths": {
+            //alias pathing for absolute paths
+            "@src/*": ["src/*"],
+            "*": ["node_modules/*"]
+        }
+    },
+    "include": ["**/*"]
+}
